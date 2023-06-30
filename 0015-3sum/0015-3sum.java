@@ -1,16 +1,16 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
-        ArrayList<List<Integer>> ret = new ArrayList<List<Integer>>();
+        Arrays.sort(nums); //정렬
+        ArrayList<List<Integer>> ret = new ArrayList<List<Integer>>(); //결과값을 저장하는 배열
         int length = nums.length;
-        int j, k;
+        int j, k; //2번째 3번째 point
 
         for (int i = 0; i < length; i++) {
             if (i == 0 || nums[i] != nums[i - 1]) {
-                j = i + 1;
-                k = length - 1;
+                j = i + 1; //2번째 point는 첫번째 point 바로 오른쪽
+                k = length - 1; //3번째 point는 맨마지막 
                 while (j < k) {
-                    if (nums[i] + nums[j] + nums[k] == 0) {
+                    if (nums[i] + nums[j] + nums[k] == 0) { // 합이 0이면 결과 list에 저장
                         List<Integer> out = new ArrayList<Integer>();
                         out.add(nums[i]);
                         out.add(nums[j]);
